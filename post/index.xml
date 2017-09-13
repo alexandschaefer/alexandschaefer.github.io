@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on AlexAndSchaefer</title>
+    <link>http://AlexAndSchaefer.github.io/post/</link>
+    <description>Recent content in Posts on AlexAndSchaefer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2017 Alexander Schaefer</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Basic Feature Encoding</title>
+      <link>http://AlexAndSchaefer.github.io/post/featureencoding/</link>
+      <pubDate>Thu, 13 Apr 2017 10:00:00 +0000</pubDate>
+      
+      <guid>http://AlexAndSchaefer.github.io/post/featureencoding/</guid>
+      <description>
+
+&lt;p&gt;Recently, I wanted to make a blog post on prediction problems I encounter in my work as data scientist at &lt;a href=&#34;https://www.project-a.com/&#34; target=&#34;_blank&#34;&gt;project-a&lt;/a&gt;. While working on the post I realized that feature encoding  might be too basic for some readers; while very much needed for others. As a consequence I decided feature encoding should become its own post.&lt;/p&gt;
+
+&lt;p&gt;What is &lt;strong&gt;feature encoding&lt;/strong&gt;? Not all information we have at hand is suited for the machine learning algorithm we want to use. Therefore, we have to employ a mapping or encoding e.g. from text to numbers. Here, I want to explain some basice feature encoding and give examples
+in python.&lt;/p&gt;
+
+&lt;h3 id=&#34;two-types-of-features&#34;&gt;Two Types of Features&lt;/h3&gt;
+
+&lt;p&gt;Usually you encounter two types of features: numerical or categorical.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Numerical features are usually real or integer numbers. Example numerical features are
+&lt;em&gt;revenue of a customer&lt;/em&gt;, &lt;em&gt;days since last order&lt;/em&gt; or &lt;em&gt;number of orders&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Categorical features are often given as text or boolean variables. Examples for categorical
+features are &lt;em&gt;first product category&lt;/em&gt;, &lt;em&gt;first marketing channel&lt;/em&gt; or &lt;em&gt;order delivery type&lt;/em&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;While numerical features are often straight forward to integrate, categorical features need a bit more work. Most machine learning algorithms do not understand text so we need to encode the text into numbers.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Categorical Feature&lt;/th&gt;
+&lt;th&gt;Encoded Feature&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;Text A&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;Text B&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;Text C&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Training the encoder with &lt;a href=&#34;http://scikit-learn.org&#34; target=&#34;_blank&#34;&gt;sklearn&lt;/a&gt; can be as simple as this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.preprocessing import LabelEncoder
+
+le = LabelEncoder()
+le.fit(list(data.values.flatten()) )
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then applying the &lt;a href=&#34;http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html&#34; target=&#34;_blank&#34;&gt;label encoder&lt;/a&gt; onto the data&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;le.transform(list(data.values))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This ensures a one to one mapping and makes the categorical features understandable for our ML algorithm. However,
+a numbering  like $$0,1,2, \dotsc $$ implies an ordering e.g. $$ 0 &amp;lt; 1 &amp;lt; 2 &amp;lt; \dotsc .$$ Which also implies that
+$$ &amp;ldquo; \mathrm{Text \enspace A}&amp;rdquo; &amp;lt; &amp;ldquo;\mathrm{Text \enspace B}&amp;rdquo; &amp;lt; &amp;ldquo;\mathrm{Text \enspace C}&amp;rdquo; &amp;lt; \dotsc ,$$ which we do not know and therefore not want to imply.&lt;/p&gt;
+
+&lt;p&gt;There is a solution to this problem which is a binary endcoding also called &lt;a href=&#34;http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html&#34; target=&#34;_blank&#34;&gt;one hot encoding&lt;/a&gt;.&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Categorical Feature&lt;/th&gt;
+&lt;th&gt;Encoded Feature&lt;/th&gt;
+&lt;th&gt;One Hot Encoded Feature&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;Text A&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;(1,0,0,&amp;hellip;)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;Text B&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;(0,1,0,&amp;hellip;)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;&amp;quot;Text C&amp;quot;&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;(0,0,1,&amp;hellip;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;In python this can look like this&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.preprocessing import OneHotEncoder
+
+enc = OneHotEncoder(sparse=False,n_values=np.max(data)+1)
+enc.fit(data)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So let us assume you have $n$ different categories you will create $n$-dimensional binary feature vectors. In each dimension the feature do not create an ordering and only
+contain the information of beeing present or not. This also came at a price as you created $n-1$ new feature dimensions.&lt;/p&gt;
+
+&lt;h3 id=&#34;production-setting&#34;&gt;Production Setting&lt;/h3&gt;
+
+&lt;p&gt;In a production setting you have to keep training and testing as separated processes. Often training is very expensive (in terms of computing time) so you want to do it as few times
+as possible. However, you have to use the &lt;strong&gt;same encoding in training and testing&lt;/strong&gt; process. As as a result you may want to save the encoder you used in the training setting, and load this encoder in the testing setting using &lt;a href=&#34;http://scikit-learn.org/stable/modules/model_persistence.html&#34; target=&#34;_blank&#34;&gt;joblib&lt;/a&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.externals import joblib
+from sklearn.preprocessing import LabelEncoder
+
+if train : ## fit and write encoder
+   le = LabelEncoder()
+   le.fit(list(data.values.flatten()) ) # we want one encoder for everything
+   joblib.dump(le, &#39;../model/label_encoder.pkl&#39;)
+else : ## read encoder
+   le = joblib.load(&#39;../model/label_encoder.pkl&#39;) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This scheme enforces a strict separation of train and test data. Which is a quality in itself I do often prefer. However, if your test data encloses a feature which was not present in your training this approach will fail. This cannot be fixed by fitting a new encoder without re-running the training step. Soutions might range from ignoring unknown features to constructing complex &lt;a href=&#34;https://en.wikipedia.org/wiki/Extract,_transform,_load&#34; target=&#34;_blank&#34;&gt;ETL&lt;/a&gt; processes.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
