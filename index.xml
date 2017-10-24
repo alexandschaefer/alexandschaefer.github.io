@@ -11,6 +11,24 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Predicting customer behaviour with gradient boosting</title>
+      <link>http://AlexAndSchaefer.github.io/talk/techday/</link>
+      <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://AlexAndSchaefer.github.io/talk/techday/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Getting started with Machine Learning</title>
+      <link>http://AlexAndSchaefer.github.io/talk/onproduct-meetup/</link>
+      <pubDate>Wed, 11 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://AlexAndSchaefer.github.io/talk/onproduct-meetup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Local-Global Parcellation of the Human Cerebral Cortex From Intrinsic Functional Connectivity MRI</title>
       <link>http://AlexAndSchaefer.github.io/publication/parcellation_biorxiv/</link>
       <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
