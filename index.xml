@@ -11,6 +11,66 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Predicting Customer Behavior - A General Approach</title>
+      <link>http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/</link>
+      <pubDate>Tue, 20 Feb 2018 10:00:00 +0000</pubDate>
+      
+      <guid>http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/</guid>
+      <description>
+
+&lt;h2 id=&#34;predicting-customer-behavior-a-general-approach&#34;&gt;Predicting Customer Behavior - A General Approach&lt;/h2&gt;
+
+&lt;p&gt;In my work as a data scientist at &lt;a href=&#34;https://www.project-a.com/&#34; target=&#34;_blank&#34;&gt;Project-A&lt;/a&gt; I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest. While these tasks sound very different the principles can be easily generalized to any &lt;a href=&#34;https://en.wikipedia.org/wiki/Predictive_analytics&#34; target=&#34;_blank&#34;&gt;predictive modeling&lt;/a&gt; task. Here, I will evaluate on the general principle.&lt;/p&gt;
+
+&lt;h3 id=&#34;time-scale&#34;&gt;Time scale&lt;/h3&gt;
+
+&lt;p&gt;Usually, it is not of interest to predict any arbitrary timepoint in the future. It is sufficient to estimate the target variable of interest for a specific point in time, e.g. the behavior of a customer in 12 months from now. This makes the modeling of our problem a lot easier. Instead of forecasting a complex timeseries we only need to make a single &lt;strong&gt;point estimate&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;To formalize this a little bit. We want to predict the customer behavior in $t$ months from now. And denote the customer behavior as $y_t$ and our prediction with $\hat{y_t}$. We do this prediction based on our current observations of the customer $x_0$ (e.g. his buying frequency, his created revenue up to date) .&lt;/p&gt;
+
+&lt;h3 id=&#34;data&#34;&gt;Data&lt;/h3&gt;
+
+&lt;p&gt;Data is the key component in predictive modeling. We want to make a prediction of the future based on our observations in the past. So in order to train a predictive model that predicts how customers behave in $t$ months from now. We actually go $t$ months in to the past look at our observation $x&lt;em&gt;{-t}$ and build a model $m&lt;/em&gt;{now}$ that predicts our current customer behavior $y&lt;em&gt;{now}$
+$$
+\underset{m&lt;/em&gt;{now}}{\mathrm{argmin}} (\hat{y}&lt;em&gt;{now} - y&lt;/em&gt;{now}) &lt;br /&gt;
+\underset{m&lt;em&gt;{now}}{\mathrm{argmin}} (f(x&lt;/em&gt;{-t},m&lt;em&gt;{now}) - y&lt;/em&gt;{now}).
+$$
+We do also add a &lt;a href=&#34;https://en.wikipedia.org/wiki/Regularization_(mathematics)&#34; target=&#34;_blank&#34;&gt;regularization&lt;/a&gt; term $R(f)$ as our aim is not learning the training data perfectly but to &lt;a href=&#34;https://en.wikipedia.org/wiki/Generalization_error&#34; target=&#34;_blank&#34;&gt;generalize&lt;/a&gt; as good as possible
+$$
+\underset{m&lt;em&gt;{now}}{\mathrm{argmin}} \bigg(\Big(f(x&lt;/em&gt;{-t},m&lt;em&gt;{now}) - y&lt;/em&gt;{now}\Big) - \lambda \Big(R(f)\Big)\bigg).
+$$&lt;/p&gt;
+
+&lt;h3 id=&#34;validation&#34;&gt;Validation&lt;/h3&gt;
+
+&lt;p&gt;The classical way of validating machine learning models is cross validation. For cross validation we estimate or train our model on a subset of the data. And estimate its performance on the remaining set. We can do this multiple time so that each customer was at some point part of the training dataset and at some point part of the testing dataset. This is good because it tells us how well we generalize towards new customers.&lt;/p&gt;
+
+&lt;p&gt;However, here we are not so much interested in how well our predictive model generalizes to new customers. Rather we are interested how well our model generalizes over time.  Therefore we might want to validate our approach by learning a model $m&lt;em&gt;{-t}$ that trains on observation data $x&lt;/em&gt;{-2t}$:
+$$
+\underset{m&lt;em&gt;{-t}}{\mathrm{argmin}} \bigg(\Big(f(x&lt;/em&gt;{-2t},m&lt;em&gt;{-t}) - y&lt;/em&gt;{-t}\Big) - \lambda \Big(R(f)\Big)\bigg).
+$$
+This model is ideal to validate the temporal generalization of our approach. We can apply it onto our observation at timepoint $-t$ to predict our current observation:
+$$
+f(x&lt;em&gt;{-t},m&lt;/em&gt;{-t}) = \hat{y}&lt;em&gt;{now} .
+$$
+The difference between our prediction and the actual customer behavior:
+$$
+{y}&lt;/em&gt;{now} - \hat{y}_{now} ,
+$$
+can be a good estimate how our approach generalizes over time.&lt;/p&gt;
+
+&lt;p&gt;This model is ideal to validate&lt;/p&gt;
+
+&lt;p&gt;Most imported points:&lt;/p&gt;
+
+&lt;p&gt;Validation (Historic or A/B)&lt;/p&gt;
+
+&lt;p&gt;Find out what Stakeholder really wants&lt;/p&gt;
+
+&lt;p&gt;How will the result be used&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Predicting customer behaviour with gradient boosting</title>
       <link>http://AlexAndSchaefer.github.io/talk/techday/</link>
       <pubDate>Fri, 13 Oct 2017 00:00:00 +0000</pubDate>

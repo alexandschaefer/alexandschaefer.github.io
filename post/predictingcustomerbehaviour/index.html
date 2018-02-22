@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.20.1" />
+  <meta name="author" content="Alexander Schaefer">
+  <meta name="description" content="Data Scientist">
+
+  
+  
+  
+    
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/highlight.min.css">
+    
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/academicons.min.css">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+  
+
+  <link rel="alternate" href="http://AlexAndSchaefer.github.io/index.xml" type="application/rss+xml" title="AlexAndSchaefer">
+  <link rel="feed" href="http://AlexAndSchaefer.github.io/index.xml" type="application/rss+xml" title="AlexAndSchaefer">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/">
+
+  
+
+  <title>Predicting Customer Behavior - A General Approach | AlexAndSchaefer</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">AlexAndSchaefer</a>
+    </div>
+
+    
+    <div class="collapse navbar-collapse">
+
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#about">
+            
+            <span>Home</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#posts">
+            
+            <span>Posts</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#publications_selected">
+            
+            <span>Publications</span>
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        <li class="nav-item">
+          <a href="/#contact">
+            
+            <span>Contact</span>
+          </a>
+        </li>
+
+        
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article" itemscope itemtype="http://schema.org/Article">
+
+  
+
+  <div class="article-container">
+    <h1 itemprop="name">Predicting Customer Behavior - A General Approach</h1>
+    
+
+<div class="article-metadata">
+
+  <span class="article-date">
+    <time datetime="2018-02-20 10:00:00 &#43;0000 UTC" itemprop="datePublished">
+      Tue, Feb 20, 2018
+    </time>
+  </span>
+
+  
+
+  
+  
+  
+  
+
+  
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f"
+         target="_blank">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Predicting%20Customer%20Behavior%20-%20A%20General%20Approach&amp;url=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f"
+         target="_blank">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f&amp;title=Predicting%20Customer%20Behavior%20-%20A%20General%20Approach"
+         target="_blank">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f&amp;title=Predicting%20Customer%20Behavior%20-%20A%20General%20Approach"
+         target="_blank">
+        <i class="fa fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Predicting%20Customer%20Behavior%20-%20A%20General%20Approach&amp;body=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  
+
+</div>
+
+    <div class="article-style" itemprop="articleBody">
+      
+
+<h2 id="predicting-customer-behavior-a-general-approach">Predicting Customer Behavior - A General Approach</h2>
+
+<p>In my work as a data scientist at <a href="https://www.project-a.com/" target="_blank">Project-A</a> I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest. While these tasks sound very different the principles can be easily generalized to any <a href="https://en.wikipedia.org/wiki/Predictive_analytics" target="_blank">predictive modeling</a> task. Here, I will evaluate on the general principle.</p>
+
+<h3 id="time-scale">Time scale</h3>
+
+<p>Usually, it is not of interest to predict any arbitrary timepoint in the future. It is sufficient to estimate the target variable of interest for a specific point in time, e.g. the behavior of a customer in 12 months from now. This makes the modeling of our problem a lot easier. Instead of forecasting a complex timeseries we only need to make a single <strong>point estimate</strong>.</p>
+
+<p>To formalize this a little bit. We want to predict the customer behavior in $t$ months from now. And denote the customer behavior as $y_t$ and our prediction with $\hat{y_t}$. We do this prediction based on our current observations of the customer $x_0$ (e.g. his buying frequency, his created revenue up to date) .</p>
+
+<h3 id="data">Data</h3>
+
+<p>Data is the key component in predictive modeling. We want to make a prediction of the future based on our observations in the past. So in order to train a predictive model that predicts how customers behave in $t$ months from now. We actually go $t$ months in to the past look at our observation $x<em>{-t}$ and build a model $m</em>{now}$ that predicts our current customer behavior $y<em>{now}$
+$$
+\underset{m</em>{now}}{\mathrm{argmin}} (\hat{y}<em>{now} - y</em>{now}) <br />
+\underset{m<em>{now}}{\mathrm{argmin}} (f(x</em>{-t},m<em>{now}) - y</em>{now}).
+$$
+We do also add a <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)" target="_blank">regularization</a> term $R(f)$ as our aim is not learning the training data perfectly but to <a href="https://en.wikipedia.org/wiki/Generalization_error" target="_blank">generalize</a> as good as possible
+$$
+\underset{m<em>{now}}{\mathrm{argmin}} \bigg(\Big(f(x</em>{-t},m<em>{now}) - y</em>{now}\Big) - \lambda \Big(R(f)\Big)\bigg).
+$$</p>
+
+<h3 id="validation">Validation</h3>
+
+<p>The classical way of validating machine learning models is cross validation. For cross validation we estimate or train our model on a subset of the data. And estimate its performance on the remaining set. We can do this multiple time so that each customer was at some point part of the training dataset and at some point part of the testing dataset. This is good because it tells us how well we generalize towards new customers.</p>
+
+<p>However, here we are not so much interested in how well our predictive model generalizes to new customers. Rather we are interested how well our model generalizes over time.  Therefore we might want to validate our approach by learning a model $m<em>{-t}$ that trains on observation data $x</em>{-2t}$:
+$$
+\underset{m<em>{-t}}{\mathrm{argmin}} \bigg(\Big(f(x</em>{-2t},m<em>{-t}) - y</em>{-t}\Big) - \lambda \Big(R(f)\Big)\bigg).
+$$
+This model is ideal to validate the temporal generalization of our approach. We can apply it onto our observation at timepoint $-t$ to predict our current observation:
+$$
+f(x<em>{-t},m</em>{-t}) = \hat{y}<em>{now} .
+$$
+The difference between our prediction and the actual customer behavior:
+$$
+{y}</em>{now} - \hat{y}_{now} ,
+$$
+can be a good estimate how our approach generalizes over time.</p>
+
+<p>This model is ideal to validate</p>
+
+<p>Most imported points:</p>
+
+<p>Validation (Historic or A/B)</p>
+
+<p>Find out what Stakeholder really wants</p>
+
+<p>How will the result be used</p>
+
+    </div>
+  </div>
+
+</article>
+
+<div class="container">
+  <nav>
+  <ul class="pager">
+    
+    <li class="previous"><a href="http://AlexAndSchaefer.github.io/post/featureencoding/"><span
+      aria-hidden="true">&larr;</span> Basic Feature Encoding</a></li>
+    
+
+    
+  </ul>
+</nav>
+
+</div>
+
+<div class="article-container">
+  
+
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="powered-by">
+
+      &copy; 2017 Alexander Schaefer &middot; 
+
+      Powered by the <a href="https://github.com/gcushen/hugo-academic" target="_blank">Academic
+      theme</a> for <a href="http://gohugo.io" target="_blank">Hugo</a>.
+
+      <span class="pull-right" aria-hidden="true">
+        <a href="#" id="back_to_top">
+          <span class="button_icon">
+            <i class="fa fa-chevron-up fa-2x"></i>
+          </span>
+        </a>
+      </span>
+
+    </p>
+  </div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.4/TweenMax.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+    <script src="/js/jquery-1.12.3.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/isotope.pkgd.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/hugo-academic.js"></script>
+    
+
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-99239919-1', 'auto');
+        ga('send', 'pageview');
+
+         
+        var links = document.querySelectorAll('a');
+        Array.prototype.map.call(links, function(item) {
+            if (item.host != document.location.host) {
+                item.addEventListener('click', function() {
+                    var action = item.getAttribute('data-action') || 'follow';
+                    ga('send', 'event', 'outbound', action, item.href);
+                });
+            }
+        });
+    </script>
+    
+
+    
+    
+      
+      <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js"></script>
+
+      
+
+      
+
+      <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+    </script>
+    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+    
+
+  </body>
+</html>
+
