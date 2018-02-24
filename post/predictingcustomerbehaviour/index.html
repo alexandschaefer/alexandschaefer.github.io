@@ -191,11 +191,11 @@
     <div class="article-style" itemprop="articleBody">
       
 
-<p>In my work as a data scientist at <a href="https://www.project-a.com/" target="_blank">Project-A</a> I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest. While these tasks sound very different the principles can be easily generalized to any <a href="https://en.wikipedia.org/wiki/Predictive_analytics" target="_blank">predictive modeling</a> task. Here, I will evaluate on the general principle.</p>
+<p>In my work as a data scientist at <a href="https://www.project-a.com/" target="_blank">Project A</a>. I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest. While these tasks sound very different the principles can be easily generalized to any <a href="https://en.wikipedia.org/wiki/Predictive_analytics" target="_blank">predictive modeling</a> task. Here, I will evaluate on the general principle.</p>
 
 <h3 id="time-scale">Time scale</h3>
 
-<p>Usually, it is not of interest to predict any arbitrary timepoint in the future. It is sufficient to estimate the target variable of interest for a specific point in time, e.g. the behavior of a customer in 12 months from now. This makes the modeling of our problem a lot easier. Instead of forecasting a complex timeseries we only need to make a single <strong>point estimate</strong>.</p>
+<p>Usually, it is not of interest to predict any arbitrary time point in the future. It is sufficient to estimate the target variable of interest for a specific point in time, e.g. the behavior of a customer in 12 months from now. This makes the modeling of our problem a lot easier. Instead of forecasting a complex time series we only need to make a single <strong>point estimate</strong>.</p>
 
 <p>To formalize this a little bit. We want to predict the customer behavior in $t$ months from now. And denote the customer behavior as $y_t$ and our prediction with $\hat{y_t}$. We do this prediction based on our current observations of the customer $x_0$ (e.g. his buying frequency, his created revenue up to date) .</p>
 
@@ -219,7 +219,7 @@ $$</p>
 $$
 \underset{m_{-t}}{\mathrm{argmin}} \bigg(\Big(f(x_{-2t},m_{-t}) - y_{-t}\Big) - \lambda \Big(R(f)\Big)\bigg).
 $$
-This model is ideal to validate the temporal generalization of our approach. We can apply it onto our observation at timepoint $-t$ to predict our current observation:
+This model is ideal to validate the temporal generalization of our approach. We can apply it onto our observation at time point $-t$ to predict our current observation:
 $$
 f(x_{-t},m_{-t}) = \hat{y}_{now} .
 $$
@@ -229,11 +229,19 @@ $$
 $$
 can be a good estimate how our approach generalizes over time.</p>
 
-<p>Another valid approach is store your predictions and to monitor there development and ideally their convergence over time.</p>
+<p>Another valid approach is store your predictions and to monitor their development and ideally their convergence over time.</p>
 
 <h3 id="communication-and-alignment">Communication and Alignment</h3>
 
 <p>A problem which is a lot of times underestimated is intense communication with the stakeholders. Often additional hours spend in the initial alignment phase can save days in later phases. Here, I recommend to ask stakeholders how they want to use the result of the predictive model. Sometimes, you will find out that a simple statistic is sufficient or the problem is very different to how it was initially described. Additionally, I recommend to mutually align on points and iterate until everyone is on the same page.</p>
+
+<h3 id="methods">Methods</h3>
+
+<p>On the contrary a problem which is often over estimated is the choice of a machine learning method. Often people want to work a like to machine learning method papers and compare 5 to 10 different methods. While a new machine learning method has to be compared to others to give evidence for its relevance the value in creating a new data product is rather small. Usually spending time in feature engineering or acquiring more labeled data is much better spend. Here is an Illustration by <a href="http://www.aclweb.org/anthology/P01-1005" target="_blank">Banko and Brill</a> showing impressively that data is more powerful than algorithms:</p>
+
+<p><img src="/img/BankoBrill.png" alt="BankoBrill" /></p>
+
+<p>It is claimed that more modern approaches like deep learning are mainly performing better because they able to encode more data. This also points to algorithmic complexity and the question how well an algorithms scales with data.</p>
 
     </div>
   </div>
