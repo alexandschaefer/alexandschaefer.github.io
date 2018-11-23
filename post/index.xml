@@ -8,7 +8,9 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Alexander Schaefer</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="http://AlexAndSchaefer.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Predicting Customer Behavior - A General Approach</title>
@@ -16,60 +18,7 @@
       <pubDate>Thu, 22 Feb 2018 10:00:00 +0000</pubDate>
       
       <guid>http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/</guid>
-      <description>
-
-&lt;p&gt;In my work as a data scientist at &lt;a href=&#34;https://www.project-a.com/&#34; target=&#34;_blank&#34;&gt;Project A&lt;/a&gt;. I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest. While these tasks sound very different the principles can be easily generalized to any &lt;a href=&#34;https://en.wikipedia.org/wiki/Predictive_analytics&#34; target=&#34;_blank&#34;&gt;predictive modeling&lt;/a&gt; task. Here, I will evaluate on the general principle.&lt;/p&gt;
-
-&lt;h3 id=&#34;time-scale&#34;&gt;Time scale&lt;/h3&gt;
-
-&lt;p&gt;Usually, it is not of interest to predict any arbitrary time point in the future. It is sufficient to estimate the target variable of interest for a specific point in time, e.g. the behavior of a customer in 12 months from now. This makes the modeling of our problem a lot easier. Instead of forecasting a complex time series we only need to make a single &lt;strong&gt;point estimate&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;To formalize this a little bit. We want to predict the customer behavior in $t$ months from now. And denote the customer behavior as $y_t$ and our prediction with $\hat{y_t}$. We do this prediction based on our current observations of the customer $x_0$ (e.g. his buying frequency, his created revenue up to date) .&lt;/p&gt;
-
-&lt;h3 id=&#34;data&#34;&gt;Data&lt;/h3&gt;
-
-&lt;p&gt;Data is the key component in predictive modeling. We want to make a prediction of the future based on our observations in the past. So in order to train a predictive model that predicts how customers behave in $t$ months from now. We actually go $t$ months in to the past look at our observation $x_{-t}$ and build a model $m_{now}$ that predicts our current customer behavior $y_{now}$
-$$
-\underset{m_{now}}{\mathrm{argmin}} (\hat{y}_{now} - y_{now}) &lt;br /&gt;
-\underset{m_{now}}{\mathrm{argmin}} (f(x_{-t},m_{now}) - y_{now}).
-$$
-We do also add a &lt;a href=&#34;https://en.wikipedia.org/wiki/Regularization_(mathematics)&#34; target=&#34;_blank&#34;&gt;regularization&lt;/a&gt; term $R(f)$ as our aim is not learning the training data perfectly but to &lt;a href=&#34;https://en.wikipedia.org/wiki/Generalization_error&#34; target=&#34;_blank&#34;&gt;generalize&lt;/a&gt; as good as possible
-$$
-\underset{m_{now}}{\mathrm{argmin}} \bigg(\Big(f(x_{-t},m_{now}) - y_{now}\Big) - \lambda \Big(R(f)\Big)\bigg).
-$$&lt;/p&gt;
-
-&lt;h3 id=&#34;validation&#34;&gt;Validation&lt;/h3&gt;
-
-&lt;p&gt;The classical way of validating machine learning models is cross validation. For cross validation we estimate or train our model on a subset of the data. And estimate its performance on the remaining set. We can do this multiple time so that each customer was at some point part of the training dataset and at some point part of the testing dataset. This is good because it tells us how well we generalize towards new customers.&lt;/p&gt;
-
-&lt;p&gt;However, here we are not so much interested in how well our predictive model generalizes to new customers. Rather we are interested how well our model generalizes over time.  Therefore we might want to validate our approach by learning a model $m_{-t}$ that trains on observation data $x_{-2t}$:
-$$
-\underset{m_{-t}}{\mathrm{argmin}} \bigg(\Big(f(x_{-2t},m_{-t}) - y_{-t}\Big) - \lambda \Big(R(f)\Big)\bigg).
-$$
-This model is ideal to validate the temporal generalization of our approach. We can apply it onto our observation at time point $-t$ to predict our current observation:
-$$
-f(x_{-t},m_{-t}) = \hat{y}_{now} .
-$$
-The difference between our prediction and the actual customer behavior:
-$$
-{y}_{now} - \hat{y}_{now} ,
-$$
-can be a good estimate how our approach generalizes over time.&lt;/p&gt;
-
-&lt;p&gt;Another valid approach is store your predictions and to monitor their development and ideally their convergence over time.&lt;/p&gt;
-
-&lt;h3 id=&#34;communication-and-alignment&#34;&gt;Communication and Alignment&lt;/h3&gt;
-
-&lt;p&gt;A problem which is a lot of times underestimated is intense communication with the stakeholders. Often additional hours spend in the initial alignment phase can save days in later phases. Here, I recommend to ask stakeholders how they want to use the result of the predictive model. Sometimes, you will find out that a simple statistic is sufficient or the problem is very different to how it was initially described. Additionally, I recommend to mutually align on points and iterate until everyone is on the same page.&lt;/p&gt;
-
-&lt;h3 id=&#34;methods&#34;&gt;Methods&lt;/h3&gt;
-
-&lt;p&gt;On the contrary a problem which is often over estimated is the choice of a machine learning method. Often people want to work a like to machine learning method papers and compare 5 to 10 different methods. While a new machine learning method has to be compared to others to give evidence for its relevance the value in creating a new data product is rather small. Usually spending time in feature engineering or acquiring more labeled data is much better spend. Here is an Illustration by &lt;a href=&#34;http://www.aclweb.org/anthology/P01-1005&#34; target=&#34;_blank&#34;&gt;Banko and Brill&lt;/a&gt; showing impressively that data is more powerful than algorithms:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;http://AlexAndSchaefer.github.io/img/BankoBrill.png&#34; alt=&#34;BankoBrill&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;It is claimed that more modern approaches like deep learning are mainly performing better because they able to encode more data. This also points to algorithmic complexity and the question how well an algorithms scales with data.&lt;/p&gt;
-</description>
+      <description>In my work as a data scientist at Project A. I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest.</description>
     </item>
     
     <item>
@@ -78,130 +27,8 @@ can be a good estimate how our approach generalizes over time.&lt;/p&gt;
       <pubDate>Thu, 13 Apr 2017 10:00:00 +0000</pubDate>
       
       <guid>http://AlexAndSchaefer.github.io/post/featureencoding/</guid>
-      <description>
-
-&lt;p&gt;Recently, I wanted to make a blog post on prediction problems I encounter in my work as data scientist at &lt;a href=&#34;https://www.project-a.com/&#34; target=&#34;_blank&#34;&gt;project-a&lt;/a&gt;. While working on the post I realized that feature encoding  might be too basic for some readers; while very much needed for others. As a consequence I decided feature encoding should become its own post.&lt;/p&gt;
-
-&lt;p&gt;What is &lt;strong&gt;feature encoding&lt;/strong&gt;? Not all information we have at hand is suited for the machine learning algorithm we want to use. Therefore, we have to employ a mapping or encoding e.g. from text to numbers. Here, I want to explain some basice feature encoding and give examples
-in python.&lt;/p&gt;
-
-&lt;h3 id=&#34;two-types-of-features&#34;&gt;Two Types of Features&lt;/h3&gt;
-
-&lt;p&gt;Usually you encounter two types of features: numerical or categorical.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Numerical features are usually real or integer numbers. Example numerical features are
-&lt;em&gt;revenue of a customer&lt;/em&gt;, &lt;em&gt;days since last order&lt;/em&gt; or &lt;em&gt;number of orders&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Categorical features are often given as text or boolean variables. Examples for categorical
-features are &lt;em&gt;first product category&lt;/em&gt;, &lt;em&gt;first marketing channel&lt;/em&gt; or &lt;em&gt;order delivery type&lt;/em&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;While numerical features are often straight forward to integrate, categorical features need a bit more work. Most machine learning algorithms do not understand text so we need to encode the text into numbers.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Categorical Feature&lt;/th&gt;
-&lt;th&gt;Encoded Feature&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&amp;quot;Text A&amp;quot;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&amp;quot;Text B&amp;quot;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&amp;quot;Text C&amp;quot;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;Training the encoder with &lt;a href=&#34;http://scikit-learn.org&#34; target=&#34;_blank&#34;&gt;sklearn&lt;/a&gt; can be as simple as this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.preprocessing import LabelEncoder
-
-le = LabelEncoder()
-le.fit(list(data.values.flatten()) )
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;And then applying the &lt;a href=&#34;http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html&#34; target=&#34;_blank&#34;&gt;label encoder&lt;/a&gt; onto the data&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;le.transform(list(data.values))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This ensures a one to one mapping and makes the categorical features understandable for our ML algorithm. However,
-a numbering  like $$0,1,2, \dotsc $$ implies an ordering e.g. $$ 0 &amp;lt; 1 &amp;lt; 2 &amp;lt; \dotsc .$$ Which also implies that
-$$ &amp;ldquo; \mathrm{Text \enspace A}&amp;rdquo; &amp;lt; &amp;ldquo;\mathrm{Text \enspace B}&amp;rdquo; &amp;lt; &amp;ldquo;\mathrm{Text \enspace C}&amp;rdquo; &amp;lt; \dotsc ,$$ which we do not know and therefore not want to imply.&lt;/p&gt;
-
-&lt;p&gt;There is a solution to this problem which is a binary endcoding also called &lt;a href=&#34;http://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html&#34; target=&#34;_blank&#34;&gt;one hot encoding&lt;/a&gt;.&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Categorical Feature&lt;/th&gt;
-&lt;th&gt;Encoded Feature&lt;/th&gt;
-&lt;th&gt;One Hot Encoded Feature&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&amp;quot;Text A&amp;quot;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;0&lt;/td&gt;
-&lt;td&gt;(1,0,0,&amp;hellip;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&amp;quot;Text B&amp;quot;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;td&gt;(0,1,0,&amp;hellip;)&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;&amp;quot;Text C&amp;quot;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;2&lt;/td&gt;
-&lt;td&gt;(0,0,1,&amp;hellip;)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;In python this can look like this&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.preprocessing import OneHotEncoder
-
-enc = OneHotEncoder(sparse=False,n_values=np.max(data)+1)
-enc.fit(data)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So let us assume you have $n$ different categories you will create $n$-dimensional binary feature vectors. In each dimension the feature do not create an ordering and only
-contain the information of beeing present or not. This also came at a price as you created $n-1$ new feature dimensions.&lt;/p&gt;
-
-&lt;h3 id=&#34;production-setting&#34;&gt;Production Setting&lt;/h3&gt;
-
-&lt;p&gt;In a production setting you have to keep training and testing as separated processes. Often training is very expensive (in terms of computing time) so you want to do it as few times
-as possible. However, you have to use the &lt;strong&gt;same encoding in training and testing&lt;/strong&gt; process. As as a result you may want to save the encoder you used in the training setting, and load this encoder in the testing setting using &lt;a href=&#34;http://scikit-learn.org/stable/modules/model_persistence.html&#34; target=&#34;_blank&#34;&gt;joblib&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn.externals import joblib
-from sklearn.preprocessing import LabelEncoder
-
-if train : ## fit and write encoder
-   le = LabelEncoder()
-   le.fit(list(data.values.flatten()) ) # we want one encoder for everything
-   joblib.dump(le, &#39;../model/label_encoder.pkl&#39;)
-else : ## read encoder
-   le = joblib.load(&#39;../model/label_encoder.pkl&#39;) 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This scheme enforces a strict separation of train and test data. Which is a quality in itself I do often prefer. However, if your test data encloses a feature which was not present in your training this approach will fail. This cannot be fixed by fitting a new encoder without re-running the training step. Soutions might range from ignoring unknown features to constructing complex &lt;a href=&#34;https://en.wikipedia.org/wiki/Extract,_transform,_load&#34; target=&#34;_blank&#34;&gt;ETL&lt;/a&gt; processes.&lt;/p&gt;
-</description>
+      <description>Recently, I wanted to make a blog post on prediction problems I encounter in my work as data scientist at project-a. While working on the post I realized that feature encoding might be too basic for some readers; while very much needed for others. As a consequence I decided feature encoding should become its own post.
+What is feature encoding? Not all information we have at hand is suited for the machine learning algorithm we want to use.</description>
     </item>
     
   </channel>

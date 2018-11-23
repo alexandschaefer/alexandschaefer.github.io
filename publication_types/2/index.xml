@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Publications on AlexAndSchaefer</title>
-    <link>http://AlexAndSchaefer.github.io/publication/</link>
-    <description>Recent content in Publications on AlexAndSchaefer</description>
+    <title>2 on AlexAndSchaefer</title>
+    <link>http://AlexAndSchaefer.github.io/publication_types/2/</link>
+    <description>Recent content in 2 on AlexAndSchaefer</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2017 Alexander Schaefer</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://AlexAndSchaefer.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://AlexAndSchaefer.github.io/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       <pubDate>Tue, 06 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://AlexAndSchaefer.github.io/publication/parcellation_biorxiv/</guid>
-      <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
-    </item>
-    
-    <item>
-      <title>Functional connectivity parcellation of the human brain</title>
-      <link>http://AlexAndSchaefer.github.io/publication/parcellation_human_brain/</link>
-      <pubDate>Tue, 09 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://AlexAndSchaefer.github.io/publication/parcellation_human_brain/</guid>
       <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
     </item>
     
