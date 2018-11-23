@@ -11,6 +11,16 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Spatial Topography of Individual-Specific Cortical Networks Predicts Human Cognition, Personality and Emotion</title>
+      <link>http://AlexAndSchaefer.github.io/publication/kong/</link>
+      <pubDate>Fri, 25 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://AlexAndSchaefer.github.io/publication/kong/</guid>
+      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Predicting Customer Behavior - A General Approach</title>
       <link>http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/</link>
       <pubDate>Thu, 22 Feb 2018 10:00:00 +0000</pubDate>
