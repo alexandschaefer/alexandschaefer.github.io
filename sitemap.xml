@@ -1,163 +1,138 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/home/about/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/home/about/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/home/posts/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/home/posts/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/home/publications_selected/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/home/publications_selected/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/home/publications/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/home/publications/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/home/talks/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/home/talks/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/home/contact/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/home/contact/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/</loc>
-      <lastmod>2020-03-01T10:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/</loc>
+    <lastmod>2020-03-01T10:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/post/handson/</loc>
-      <lastmod>2020-03-01T10:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/post/handson/</loc>
+    <lastmod>2020-03-01T10:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication_types/2/</loc>
-      <lastmod>2018-05-25T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication_types/2/</loc>
+    <lastmod>2018-05-25T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication_types/</loc>
-      <lastmod>2018-05-25T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication_types/</loc>
+    <lastmod>2018-05-25T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication/kong/</loc>
-      <lastmod>2018-05-25T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication/kong/</loc>
+    <lastmod>2018-05-25T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/</loc>
-      <lastmod>2018-02-22T10:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/</loc>
+    <lastmod>2018-02-22T10:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/talk/techday/</loc>
-      <lastmod>2017-10-13T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/talk/techday/</loc>
+    <lastmod>2017-10-13T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/talk/onproduct-meetup/</loc>
-      <lastmod>2017-10-11T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/talk/onproduct-meetup/</loc>
+    <lastmod>2017-10-11T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication/parcellation_biorxiv/</loc>
-      <lastmod>2017-06-06T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication/parcellation_biorxiv/</loc>
+    <lastmod>2017-06-06T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/post/featureencoding/</loc>
-      <lastmod>2017-04-13T10:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/post/featureencoding/</loc>
+    <lastmod>2017-04-13T10:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/tags/academic/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/tags/academic/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/post/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/post/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/talk/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication_types/6/</loc>
-      <lastmod>2016-08-09T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication_types/6/</loc>
+    <lastmod>2016-08-09T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication/parcellation_human_brain/</loc>
-      <lastmod>2016-08-09T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication/parcellation_human_brain/</loc>
+    <lastmod>2016-08-09T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/home/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/home/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication/dynamic_hubs/</loc>
-      <lastmod>2014-05-06T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication/dynamic_hubs/</loc>
+    <lastmod>2014-05-06T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/publication/early_small_vessel/</loc>
-      <lastmod>2014-04-30T00:00:00+00:00</lastmod>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/publication/early_small_vessel/</loc>
+    <lastmod>2014-04-30T00:00:00+00:00</lastmod>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/categories/</loc>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/categories/</loc>
+  </url>
   
-    <url>
-    
-      <loc>http://AlexAndSchaefer.github.io/tags/</loc>
-    </url>
+  <url>
+    <loc>http://AlexAndSchaefer.github.io/tags/</loc>
+  </url>
   
 </urlset>
