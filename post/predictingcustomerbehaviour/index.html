@@ -5,19 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.2.5">
+  <meta name="generator" content="Source Themes Academic 3.1.1">
+  <meta name="generator" content="Hugo 0.51" />
+  <meta name="author" content="Alexander Schaefer">
 
   
-
-  
-  
-  
-  
-  
-  
-
-  
-
   
   
   
@@ -38,12 +30,6 @@
   
 
   
-
-  
-
-  
-
-  
   
   
   <meta name="theme-color" content="#2962ff">
@@ -56,7 +42,7 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
 
     
@@ -68,8 +54,7 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
         
       
     
@@ -107,6 +92,9 @@
   
 
   
+  <link rel="alternate" href="http://AlexAndSchaefer.github.io/index.xml" type="application/rss+xml" title="AlexAndSchaefer">
+  <link rel="feed" href="http://AlexAndSchaefer.github.io/index.xml" type="application/rss+xml" title="AlexAndSchaefer">
+  
 
   <link rel="manifest" href="/site.webmanifest">
   <link rel="icon" type="image/png" href="/img/icon.png">
@@ -114,19 +102,16 @@
 
   <link rel="canonical" href="http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/">
 
-  
-  
-  
-  
-    
-    
-  
-  <meta property="twitter:card" content="summary">
+  <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="AlexAndSchaefer">
   <meta property="og:url" content="http://AlexAndSchaefer.github.io/post/predictingcustomerbehaviour/">
   <meta property="og:title" content="Predicting Customer Behavior - A General Approach | AlexAndSchaefer">
-  <meta property="og:description" content="In my work as a data scientist at Project A. I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest."><meta property="og:image" content="http://AlexAndSchaefer.github.io/img/alex.jpg">
+  <meta property="og:description" content="In my work as a data scientist at Project A. I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest.">
+  
+  
+    
+  <meta property="og:image" content="http://AlexAndSchaefer.github.io/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
   <meta property="article:published_time" content="2018-02-22T10:00:00&#43;00:00">
@@ -142,37 +127,6 @@
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
-  <aside class="search-results" id="search">
-  <div class="container">
-    <section class="search-header">
-
-      <div class="row no-gutters justify-content-between mb-3">
-        <div class="col-6">
-          <h1>Search</h1>
-        </div>
-        <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
-        </div>
-      </div>
-
-      <div id="search-box">
-        
-        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" role="textbox" spellcheck="false" type="search">
-        
-      </div>
-
-    </section>
-    <section class="section-search-results">
-
-      <div id="search-hits">
-        
-      </div>
-
-    </section>
-  </div>
-</aside>
-
 
 <nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
   <div class="container">
@@ -275,15 +229,6 @@
         
 
         
-        <li class="nav-item">
-          <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
-        </li>
-        
-
-        
-
-        
-
       </ul>
 
     </div>
@@ -319,27 +264,25 @@
   
     
 
-
-
-<meta content="2018-02-22 10:00:00 &#43;0000 UTC" itemprop="datePublished">
-<meta content="2018-02-22 10:00:00 &#43;0000 UTC" itemprop="dateModified">
-
 <div class="article-metadata">
 
   
   
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    <time>Feb 22, 2018</time>
+  <span itemscope itemprop="author" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alexander Schaefer">
   </span>
   
 
-  
+  <span class="article-date">
+    
+    <meta content="2018-02-22 10:00:00 &#43;0000 UTC" itemprop="datePublished">
+    <time datetime="2018-02-22 10:00:00 &#43;0000 UTC" itemprop="dateModified">
+      Feb 22, 2018
+    </time>
+  </span>
+  <span itemscope itemprop="publisher" itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Alexander Schaefer">
+  </span>
 
   
   <span class="middot-divider"></span>
@@ -354,14 +297,52 @@
   
 
   
-    
+  
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Predicting%20Customer%20Behavior%20-%20A%20General%20Approach&amp;url=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f&amp;title=Predicting%20Customer%20Behavior%20-%20A%20General%20Approach"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f&amp;title=Predicting%20Customer%20Behavior%20-%20A%20General%20Approach"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Predicting%20Customer%20Behavior%20-%20A%20General%20Approach&amp;body=http%3a%2f%2fAlexAndSchaefer.github.io%2fpost%2fpredictingcustomerbehaviour%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
 
   
 
 </div>
 
     
-
 
 
 
@@ -387,22 +368,32 @@
   <div class="article-container">
 
     <div class="article-style" itemprop="articleBody">
-      <p>In my work as a data scientist at <a href="https://www.project-a.com/">Project A</a>. I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest. While these tasks sound very different the principles can be easily generalized to any <a href="https://en.wikipedia.org/wiki/Predictive_analytics">predictive modeling</a> task. Here, I will evaluate on the general principle.</p>
+      
+
+<p>In my work as a data scientist at <a href="https://www.project-a.com/" target="_blank">Project A</a>. I often encounter the task of predicting customer behavior. For many businesses it can be very valuable to estimate which one of their new customers will be the most profitable in the future. Or which one of the existing customers will stop being valuable. In this context many tasks such as predicting churn, customer lifetime value or ending of newsletter subscription are of interest. While these tasks sound very different the principles can be easily generalized to any <a href="https://en.wikipedia.org/wiki/Predictive_analytics" target="_blank">predictive modeling</a> task. Here, I will evaluate on the general principle.</p>
+
 <h3 id="time-scale">Time scale</h3>
+
 <p>Usually, it is not of interest to predict any arbitrary time point in the future. It is sufficient to estimate the target variable of interest for a specific point in time, e.g. the behavior of a customer in 12 months from now. This makes the modeling of our problem a lot easier. Instead of forecasting a complex time series we only need to make a single <strong>point estimate</strong>.</p>
+
 <p>To formalize this a little bit. We want to predict the customer behavior in $t$ months from now. And denote the customer behavior as $y_t$ and our prediction with $\hat{y_t}$. We do this prediction based on our current observations of the customer $x_0$ (e.g. his buying frequency, his created revenue up to date) .</p>
+
 <h3 id="data">Data</h3>
+
 <p>Data is the key component in predictive modeling. We want to make a prediction of the future based on our observations in the past. So in order to train a predictive model that predicts how customers behave in $t$ months from now. We actually go $t$ months in to the past look at our observation $x_{-t}$ and build a model $m_{now}$ that predicts our current customer behavior $y_{now}$
 $$
-\underset{m_{now}}{\mathrm{argmin}} (\hat{y}_{now} - y_{now}) \<br>
+\underset{m_{now}}{\mathrm{argmin}} (\hat{y}_{now} - y_{now}) <br />
 \underset{m_{now}}{\mathrm{argmin}} (f(x_{-t},m_{now}) - y_{now}).
 $$
-We do also add a <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)">regularization</a> term $R(f)$ as our aim is not learning the training data perfectly but to <a href="https://en.wikipedia.org/wiki/Generalization_error">generalize</a> as good as possible
+We do also add a <a href="https://en.wikipedia.org/wiki/Regularization_(mathematics)" target="_blank">regularization</a> term $R(f)$ as our aim is not learning the training data perfectly but to <a href="https://en.wikipedia.org/wiki/Generalization_error" target="_blank">generalize</a> as good as possible
 $$
 \underset{m_{now}}{\mathrm{argmin}} \bigg(\Big(f(x_{-t},m_{now}) - y_{now}\Big) - \lambda \Big(R(f)\Big)\bigg).
 $$</p>
+
 <h3 id="validation">Validation</h3>
+
 <p>The classical way of validating machine learning models is cross validation. For cross validation we estimate or train our model on a subset of the data. And estimate its performance on the remaining set. We can do this multiple time so that each customer was at some point part of the training dataset and at some point part of the testing dataset. This is good because it tells us how well we generalize towards new customers.</p>
+
 <p>However, here we are not so much interested in how well our predictive model generalizes to new customers. Rather we are interested how well our model generalizes over time.  Therefore we might want to validate our approach by learning a model $m_{-t}$ that trains on observation data $x_{-2t}$:
 $$
 \underset{m_{-t}}{\mathrm{argmin}} \bigg(\Big(f(x_{-2t},m_{-t}) - y_{-t}\Big) - \lambda \Big(R(f)\Big)\bigg).
@@ -416,12 +407,19 @@ $$
 {y}_{now} - \hat{y}_{now} ,
 $$
 can be a good estimate how our approach generalizes over time.</p>
+
 <p>Another valid approach is store your predictions and to monitor their development and ideally their convergence over time.</p>
+
 <h3 id="communication-and-alignment">Communication and Alignment</h3>
+
 <p>A problem which is a lot of times underestimated is intense communication with the stakeholders. Often additional hours spend in the initial alignment phase can save days in later phases. Here, I recommend to ask stakeholders how they want to use the result of the predictive model. Sometimes, you will find out that a simple statistic is sufficient or the problem is very different to how it was initially described. Additionally, I recommend to mutually align on points and iterate until everyone is on the same page.</p>
+
 <h3 id="methods">Methods</h3>
-<p>On the contrary a problem which is often over estimated is the choice of a machine learning method. Often people want to work a like to machine learning method papers and compare 5 to 10 different methods. While a new machine learning method has to be compared to others to give evidence for its relevance the value in creating a new data product is rather small. Usually spending time in feature engineering or acquiring more labeled data is much better spend. Here is an Illustration by <a href="http://www.aclweb.org/anthology/P01-1005">Banko and Brill</a> showing impressively that data is more powerful than algorithms:</p>
-<p><img src="/img/BankoBrill.png" alt="BankoBrill"></p>
+
+<p>On the contrary a problem which is often over estimated is the choice of a machine learning method. Often people want to work a like to machine learning method papers and compare 5 to 10 different methods. While a new machine learning method has to be compared to others to give evidence for its relevance the value in creating a new data product is rather small. Usually spending time in feature engineering or acquiring more labeled data is much better spend. Here is an Illustration by <a href="http://www.aclweb.org/anthology/P01-1005" target="_blank">Banko and Brill</a> showing impressively that data is more powerful than algorithms:</p>
+
+<p><img src="/img/BankoBrill.png" alt="BankoBrill" /></p>
+
 <p>It is claimed that more modern approaches like deep learning are mainly performing better because they able to encode more data. This also points to algorithmic complexity and the question how well an algorithms scales with data.</p>
 
     </div>
@@ -431,27 +429,112 @@ can be a good estimate how our approach generalizes over time.</p>
 
 
 
+    
+
+
+
+
+
+
+<div class="media author-card" itemscope itemtype="http://schema.org/Person">
+  
+  <img class="portrait mr-3" src="/img/alex.jpg" itemprop="image" alt="Avatar">
+  
+  <div class="media-body">
+    <h5 class="card-title" itemprop="name"><a href="/">Alexander Schaefer</a></h5>
+    <h6 class="card-subtitle">Lead Data Scientist</h6>
+    
+    <ul class="network-icon" aria-hidden="true">
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+      <li>
+        <a itemprop="sameAs" href="mailto:alexandschaefer@gmail.com" >
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://twitter.com/AlexAndSchaefer" target="_blank" rel="noopener">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ" target="_blank" rel="noopener">
+          <i class="ai ai-google-scholar"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://github.com/AlexAndSchaefer" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      
+      
+      
+      
+        
+      
+      
+      
+      
+      
+        
+      
+      <li>
+        <a itemprop="sameAs" href="https://www.linkedin.com/in/alexandschaefer/" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
 
     
-      
-
-
-
-
-
-
-  
-  
-  
-
-
-
-
-
-
-
-      
-      
     
 
     
@@ -467,7 +550,7 @@ can be a good estimate how our approach generalizes over time.</p>
   
 
   <p class="powered-by">
-    © 2017 Alexander Schaefer &middot; 
+    &copy; 2017 Alexander Schaefer &middot; 
 
     Powered by the
     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
@@ -518,16 +601,17 @@ can be a good estimate how our approach generalizes over time.</p>
     
     
     
-    <script src="/js/mathjax-config.js"></script>
+    
+    <script src="/js/mathjax-config.500a6cbb2c0f345fcecc21b3116d6637aa78f1f11db8081ea581abe05390c2e8f3bbffe61be3cf0217baf785c40efceabe51050a4f007e69af94efd3643260e8.js" integrity="sha512-UApsuywPNF/OzCGzEW1mN6p48fEduAgepYGr4FOQwujzu//mG&#43;PPAhe694XEDvzqvlEFCk8AfmmvlO/TZDJg6A=="></script>
     
 
     
     
     
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
 
       
@@ -540,6 +624,9 @@ can be a good estimate how our approach generalizes over time.</p>
       
       <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_CHTML-full" integrity="sha256-GhM+5JHb6QUzOQPXSJLEWP7R73CbkisjzK5Eyij4U9w=" crossorigin="anonymous" async></script>
       
+    
+
+    <script src="/js/hugo-academic.js"></script>
     
 
     
@@ -560,7 +647,7 @@ can be a good estimate how our approach generalizes over time.</p>
       const search_index_filename = "/index.json";
       const i18n = {
         'placeholder': "Search...",
-        'results': "results found",
+        'results': "Search Results",
         'no_results': "No results found"
       };
       const content_type = {
@@ -594,24 +681,11 @@ can be a good estimate how our approach generalizes over time.</p>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="/js/search.js"></script>
     
 
     
     
-
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    
-    
-    
-    <script src="/js/academic.min.f579f291d0f0c7da58aa872f9aba5215.js"></script>
 
   </body>
 </html>
