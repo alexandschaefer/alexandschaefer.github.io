@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on AlexAndSchaefer</title>
@@ -11,6 +11,16 @@
     
 	<atom:link href="http://AlexAndSchaefer.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Book Review - Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow</title>
+      <link>http://AlexAndSchaefer.github.io/post/handson/</link>
+      <pubDate>Sun, 01 Mar 2020 10:00:00 +0000</pubDate>
+      
+      <guid>http://AlexAndSchaefer.github.io/post/handson/</guid>
+      <description>This is the first post in a series. Where I want to highlight my all time favorite books. These are technical books that helped me throughout my studies and career. Most of them are very easy to read and translate a lot of knowledge to you very quickly.
+I start here with Hands-On Machine Learning by Aurélien Géron. This book actually made me want to start this series. As I really want to recommend this book to anyone interested in the topic.</description>
+    </item>
     
     <item>
       <title>Predicting Customer Behavior - A General Approach</title>
